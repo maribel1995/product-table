@@ -16,4 +16,5 @@ export const shoes = [
     name: "Vans",
     value:"vans-basic",
     price: "R$400",
+   },
 ];
