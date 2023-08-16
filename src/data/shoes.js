@@ -11,4 +11,9 @@ export const shoes = [
     value:"vans-basic",
     price: "R$400",
   },
+  {
+    url: "https://secure-static.vans.com.br/medias/sys_master/vans/vans/h1c/hbf/h00/h00/11319247503390/1002001070011U-01-BASEIMAGE-Midres.jpg",
+    name: "Vans",
+    value:"vans-basic",
+    price: "R$400",
 ];
