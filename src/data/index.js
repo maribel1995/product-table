@@ -1,4 +1,4 @@
-import {shoes} from './shoes'
+import {tenis} from './tenis'
 import {eletronicos} from './eletronicos'
 
-export {shoes, eletronicos}
+export {tenis, eletronicos}

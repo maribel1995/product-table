@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import TabsComponent from "./components/TabsComponent";
-import { shoes as tenis, eletronicos } from "./data";
+import { tenis, eletronicos } from "./data";
 import TableComponent from "./components/TableComponent";
 import { tabs, Tabs } from "./data/tabs.ts";
 import { createBrowserRouter, Outlet, RouterProvider, Navigate } from "react-router-dom";
-import React, { Fragment, useState } from "react";
+import  { Fragment, useState } from "react";
 import ProductDetail from "./components/ProductDetail";
 
 function App() {
