@@ -9,9 +9,9 @@ import ProductDetail from "./components/ProductDetail";
 
 function App() {
   
-  const [key, setKey] = useState<Tabs>(tabs[0].value as Tabs);
-  const handleSetKey = (key: Tabs) => {
-    setKey(key);
+  const [productType, setProductType] = useState<Tabs>(tabs[0].value as Tabs);
+  const handleSetKey = (type: Tabs) => {
+    setProductType(type);
   };
 
   const products = {
@@ -19,13 +19,13 @@ function App() {
     eletronicos,
     maquiagens: []
 }
-const productList = products[key]
+const productList = products[productType]
   
 
   const RootLayout = () => {
     return (
       <Box>
-        <TabsComponent onTabChange={handleSetKey} tabs={tabs} tab={key} />
+        <TabsComponent onTabChange={handleSetKey} tabs={tabs} tab={productType} />
         <Outlet />
       </Box>
     );
@@ -35,7 +35,7 @@ const productList = products[key]
     {
       path: "/",
       element: <Fragment>
-        <Navigate to={`/${key}`} />
+        <Navigate to={`/${productType}`} />
         {RootLayout()}
       </Fragment>,
       children: [
@@ -43,7 +43,8 @@ const productList = products[key]
           path: `/${tab.value}`,
           element: (
             <TableComponent
-              productName={tab.value as Tabs}
+              products={productList}
+              productType={tab.value as Tabs}
             />
           ),
         })),

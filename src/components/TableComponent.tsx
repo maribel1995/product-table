@@ -1,23 +1,24 @@
 import { Link } from "react-router-dom";
-import { shoes as tenis, eletronicos } from "../data";
 import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
+import { Tabs } from "../data/tabs";
 
 interface TableProps {
-  productName: 'tenis' |'eletronicos' | 'maquiagens';
+  products:  {
+    url: string;
+    name: string;
+    value: string;
+    price: string;
+}[]
+productType: Tabs
 }
-function TableComponent({ productName }: TableProps) {
-    const products = {
-        tenis,
-        eletronicos,
-        maquiagens: []
-    }
-    const productList = products[productName]
+function TableComponent({ products, productType }: TableProps) {
+   
   return (
     <Stack direction="row">
-      {productList.map((product, index) => (
+      {products.map((product, index) => (
         <Card key={index} sx={{ width: 200, margin: "5px" }}>
           <CardMedia
-          component={Link} to={`/${productName}/${product.value}`}
+          component={Link} to={`/${productType}/${product.value}`}
             image={product.url}
             sx={{ height: 250, backgroundSize: "cover" }}
           />
